@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>贵金属（黄金·白银）投资分析报告 | 2026年8月</title>
+<title>贵金属深度分析报告：财政纪元下的定价革命 | 2026年8月</title>
 <style>
   :root {
     --gold: #C9A227;
@@ -16,6 +16,7 @@
     --line: #E8E2D4;
     --red: #C0392B;
     --blue: #2C5F8A;
+    --green: #2E7D5B;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -23,20 +24,20 @@
     background: var(--bg); color: var(--ink);
     line-height: 1.85; font-size: 16px;
   }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px 60px; }
   header {
     background: linear-gradient(135deg, #1E1A12 0%, #3A3220 100%);
-    color: #F5EFDD; padding: 44px 20px 36px; text-align: center;
+    color: #F5EFDD; padding: 46px 20px 38px; text-align: center;
   }
   header .tag {
     display: inline-block; font-size: 12px; letter-spacing: 2px;
     border: 1px solid var(--gold); color: var(--gold);
     padding: 3px 12px; border-radius: 20px; margin-bottom: 16px;
   }
-  header h1 { font-size: 26px; line-height: 1.4; font-weight: 700; }
+  header h1 { font-size: 25px; line-height: 1.45; font-weight: 700; }
   header .sub { margin-top: 12px; font-size: 13px; color: #C9BC96; }
   h2 {
-    font-size: 20px; margin: 42px 0 16px; padding-left: 12px;
+    font-size: 20px; margin: 44px 0 16px; padding-left: 12px;
     border-left: 4px solid var(--gold); line-height: 1.4;
   }
   h3 { font-size: 17px; margin: 28px 0 12px; color: var(--gold-dark); }
@@ -52,7 +53,7 @@
     background: var(--card); border: 1px solid var(--line); border-radius: 12px;
     padding: 14px; text-align: center;
   }
-  .kpi .v { font-size: 22px; font-weight: 700; color: var(--gold-dark); }
+  .kpi .v { font-size: 21px; font-weight: 700; color: var(--gold-dark); }
   .kpi .v.silver { color: var(--silver); }
   .kpi .l { font-size: 12px; color: var(--muted); margin-top: 4px; }
   .chart { margin: 18px 0; }
@@ -61,7 +62,6 @@
   table {
     width: 100%; border-collapse: collapse; margin: 14px 0;
     font-size: 13.5px; background: var(--card);
-    border-radius: 10px; overflow: hidden;
   }
   th { background: #F1EAD6; text-align: left; padding: 10px 10px; font-size: 13px; white-space: nowrap; }
   td { padding: 9px 10px; border-top: 1px solid var(--line); vertical-align: top; }
@@ -72,12 +72,17 @@
     background: #F7F0DC; border-left: 4px solid var(--gold);
     border-radius: 0 10px 10px 0; font-weight: 600; color: #5A4A17;
   }
-  /* 思维导图 */
+  .verdict {
+    background: linear-gradient(135deg, #2C2818, #4A3E1E);
+    color: #F5EFDD; border-radius: 14px; padding: 20px; margin: 20px 0;
+  }
+  .verdict .big { font-size: 16px; font-weight: 700; line-height: 1.7; }
+  .verdict .big em { color: var(--gold); font-style: normal; }
   .mindmap { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px 14px; margin: 20px 0; }
   .mm-root {
     text-align: center; font-weight: 700; font-size: 17px; color: #fff;
     background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-    border-radius: 12px; padding: 12px; max-width: 300px; margin: 0 auto 20px;
+    border-radius: 12px; padding: 12px; max-width: 320px; margin: 0 auto 20px;
   }
   .mm-branches { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .mm-branch { border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: #FDFBF3; }
@@ -85,16 +90,26 @@
   .mm-branch ul { list-style: none; }
   .mm-branch li { font-size: 12.5px; color: #555; padding: 4px 0 4px 14px; position: relative; line-height: 1.55; }
   .mm-branch li::before { content: "·"; position: absolute; left: 4px; color: var(--gold); font-weight: 700; }
+  .scenario { border-left: 4px solid; border-radius: 10px; padding: 14px 16px; margin: 14px 0; }
+  .scenario.a { border-color: var(--green); background: #F0F7F3; }
+  .scenario.b { border-color: var(--red); background: #FBF0EE; }
+  .scenario.c { border-color: var(--blue); background: #EEF4F9; }
+  .scenario h4 { font-size: 15px; margin-bottom: 8px; }
+  .scenario .prob { font-weight: 700; font-size: 13px; }
+  .scenario.a .prob { color: var(--green); }
+  .scenario.b .prob { color: var(--red); }
+  .scenario.c .prob { color: var(--blue); }
+  .scenario p { font-size: 14px; margin: 6px 0; }
   .refs { font-size: 12.5px; color: var(--muted); }
   .refs li { margin: 8px 0 8px 20px; word-break: break-all; }
   .warn {
     background: #FDF0EE; border: 1px solid #F0D4CE; border-radius: 12px;
     padding: 14px 16px; font-size: 13px; color: #8A4A42; margin-top: 30px;
   }
+  .checklist li { margin: 8px 0 8px 22px; }
   @media (max-width: 600px) {
-    header h1 { font-size: 21px; }
+    header h1 { font-size: 20px; }
     body { font-size: 15px; }
-    .kpis { grid-template-columns: repeat(2, 1fr); }
     .mm-branches { grid-template-columns: 1fr; }
   }
 </style>
@@ -102,297 +117,321 @@
 <body>
 
 <header>
-  <div class="tag">行业研究报告 · 2026年8月21日</div>
-  <h1>贵金属（黄金·白银）投资分析报告</h1>
-  <div class="sub">财政主导与货币紧缩拉锯下的配置逻辑 · 黄金为盾 白银为矛</div>
+  <div class="tag">行业研究报告 · 深度版 · 2026年8月23日</div>
+  <h1>贵金属（黄金·白银）深度分析报告<br>—— 财政纪元下的定价革命</h1>
+  <div class="sub">五个可证伪的核心判断 · 三条情景路径预案 · 一份可直接执行的操作手册</div>
 </header>
 
 <div class="wrap">
 
   <div class="kpis">
-    <div class="kpi"><div class="v">4,520$</div><div class="l">现货黄金 · 同比+35%</div></div>
-    <div class="kpi"><div class="v silver">68.1$</div><div class="l">现货白银 · 同比+79%</div></div>
-    <div class="kpi"><div class="v">66.4</div><div class="l">金银比 · 历史均值约60</div></div>
-    <div class="kpi"><div class="v silver">46.3Moz</div><div class="l">白银2026年预计缺口（连续第6年短缺）</div></div>
+    <div class="kpi"><div class="v">4,600$</div><div class="l">现货黄金 · 距前高-18% · 三周+13%</div></div>
+    <div class="kpi"><div class="v silver">68$</div><div class="l">现货白银 · 距前高-44% · 修复空间大</div></div>
+    <div class="kpi"><div class="v">26.1%</div><div class="l">美债利息占美国税收比例（利息首超军费）</div></div>
+    <div class="kpi"><div class="v silver">1,237吨</div><div class="l">2025年全球央行购金（历史纪录，连续四年破千吨）</div></div>
   </div>
 
-  <h2>核心逻辑导图</h2>
+  <h2>核心判断导图</h2>
   <div class="mindmap">
-    <div class="mm-root">贵金属投资核心逻辑</div>
+    <div class="mm-root">贵金属投资核心逻辑（2026年8月）</div>
     <div class="mm-branches">
       <div class="mm-branch">
-        <h4>长期支撑（为什么能涨）</h4>
+        <h4>为什么必须持有（十年逻辑）</h4>
         <ul>
-          <li>美债突破40万亿，财政信用折价</li>
-          <li>黄金占全球储备27%，首超美债</li>
-          <li>央行购金Q2达289吨（+62%）</li>
-          <li>45%央行计划增持（历史最高）</li>
-          <li>白银连续6年短缺，累计耗库存7.62亿盎司</li>
+          <li>美债40万亿、利息吃掉26%税收，数学上不可逆</li>
+          <li>通胀化债是政治上唯一出路→压低实际利率</li>
+          <li>黄金市值54年来首超美债成第一大储备资产</li>
+          <li>BRICS Pay落地+The Unit（40%黄金锚）</li>
+          <li>央行购金=制度性配置，不是投机追涨</li>
         </ul>
       </div>
       <div class="mm-branch">
-        <h4>短期压制（为什么会波动）</h4>
+        <h4>为什么现在不追（短期节奏）</h4>
         <ul>
-          <li>美联储鹰派主席沃什，利率维持3.50-3.75%</li>
-          <li>9月FOMC加息概率36.2%</li>
-          <li>油价93美元，通胀粘性3.4%</li>
-          <li>月涨10%+后获利了结压力</li>
-          <li>白银高杠杆，波动为黄金1.5-2倍</li>
+          <li>金价三周+13%，COT拥挤度回到1月见顶前水平</li>
+          <li>9月15-16日FOMC：加息概率33-40%</li>
+          <li>8月27日PCE是短期方向开关（50%阈值）</li>
+          <li>第一支撑4,400，深度回调区4,300-4,100</li>
+          <li>历史规律：每轮牛市都有-30%中段深蹲</li>
         </ul>
       </div>
       <div class="mm-branch">
-        <h4>品种选择（买哪个）</h4>
+        <h4>买什么（三层结构）</h4>
         <ul>
-          <li>黄金=盾：央行购金托底，底仓配置</li>
-          <li>白银=矛：缺口+弹性，距高点还有44%空间</li>
-          <li>金银比66.4 → 白银相对低估约10%</li>
-          <li>比值&gt;70增配白银，&lt;50减配</li>
+          <li>底仓8%：黄金ETF518880+山东黄金600547</li>
+          <li>机动仓7%：赤峰黄金/黄金股ETF，三档梯度</li>
+          <li>白银卫星4%：兴业银锡3%+盛达资源1%</li>
+          <li>预留81%现金弹药，严格按价位执行</li>
         </ul>
       </div>
       <div class="mm-branch">
-        <h4>操作纪律（怎么买）</h4>
+        <h4>什么时候离场（终结清单）</h4>
         <ul>
-          <li>总仓位≤15-20%，白银≤5%</li>
-          <li>黄金回调4,400-4,450分批介入</li>
-          <li>大涨不追、大跌敢买（逆向思维）</li>
-          <li>9月FOMC前后是加仓/抄底窗口</li>
-          <li>白银跌破58-60严格止损</li>
+          <li>美联储连续加息2次+实际利率转正上行</li>
+          <li>美元指数站稳105且趋势向上</li>
+          <li>央行购金年化降至500吨以下</li>
+          <li>金银比<45且白银单月+50%（投机末端）</li>
+          <li>当前核对：0/6触发 → 继续持有</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <h2>摘要</h2>
+  <h2>1. 核心判断：五个可证伪的观点</h2>
+  <p>好的分析不是模糊的正确，而是明确的、可以被数据推翻的判断：</p>
+  <div class="tbl-scroll"><table>
+    <tr><th>#</th><th>判断</th><th>内容</th><th>置信度</th><th>可证伪条件</th></tr>
+    <tr><td>1</td><td><strong>方向</strong></td><td>本轮黄金牛市未终结，2026年上半年-30%回撤是牛市<strong>中期调整</strong>而非终结</td><td>75%</td><td>美联储连续加息2次以上且实际利率持续转正上行</td></tr>
+    <tr><td>2</td><td><strong>空间</strong></td><td>12个月黄金目标4,900-5,200（基准），乐观5,600；白银75-85</td><td>60%</td><td>金价有效跌破4,100（年内低点3,942下方）</td></tr>
+    <tr><td>3</td><td><strong>节奏</strong></td><td>9月FOMC前后回调概率70%，第一支撑4,400，深度回调4,300-4,100</td><td>70%</td><td>金价不回调直接突破4,800（用底仓应对踏空）</td></tr>
+    <tr><td>4</td><td><strong>结构</strong></td><td>央行购金是制度性配置（去美元化基建已落地），决定金价"跌不深"</td><td>80%</td><td>央行购金连续两季低于500吨年化</td></tr>
+    <tr><td>5</td><td><strong>仓位</strong></td><td>黄金类≤15%（底仓8%+机动7%），白银类≤5%，当前不追高等回踩</td><td>—</td><td>无需证伪，这是纪律</td></tr>
+  </table></div>
+  <div class="verdict">
+    <div class="big">一句话总纲：<em>长逻辑（债务货币化）决定"必须持有"，短节奏（FOMC+拥挤度）决定"何时买入"。</em>当前的正确动作是：持底仓、留弹药、等回踩、按预案执行。</div>
+  </div>
+
+  <h2>2. 宏观驱动：债务数学的不可逆</h2>
+
+  <h3>2.1 利息螺旋：一道无解的数学题</h3>
+  <div class="chart">
+    <img src="charts/chart8_interest_spiral.png" alt="美债利息吞噬财政收入的比例">
+    <div class="cap">图1：美债利息占美国财政收入比例——从9%到26.1%，2036年CBO预测近半</div>
+  </div>
+  <div class="tbl-scroll"><table>
+    <tr><th>指标</th><th>数据</th><th>含义</th></tr>
+    <tr><td>联邦债务总额</td><td><strong>40.05万亿美元</strong>（8月18日）</td><td>为GDP的122%，是国际警戒线（60%）的两倍</td></tr>
+    <tr><td>债务加权利率</td><td>3.447%</td><td>低息旧债正以4-5%利率置换，被动上升</td></tr>
+    <tr><td>利息支出（财年前10个月）</td><td><strong>1.17万亿美元</strong>（+15%）</td><td><strong>历史上首次超过同期国防开支（7,130亿）</strong></td></tr>
+    <tr><td>利息占税收比例</td><td><strong>26.1%</strong></td><td>每收100元税，26元付利息；零利率时期仅约9%</td></tr>
+    <tr><td>CBO预测（2036年）</td><td>2.1-2.5万亿美元</td><td>届时吞噬近半财政收入</td></tr>
+    <tr><td>美债增量（过去12个月）</td><td>+3万亿</td><td>非疫情时期最快；每5个月新增1万亿</td></tr>
+  </table></div>
+  <p><strong>推演</strong>：利息增速（+15%/年）与税收增速（约+5%/年）的裂口，决定了这条曲线<strong>在数学上无法收敛</strong>——除非利率大幅下降，而利率下降只有两条路：通胀回落（油价93美元、关税传导下短期看不到），或美联储压低利率（债务货币化，黄金的终极利多）。达利欧的判断：按当前轨道，债务危机"三年内，上下误差两年"。</p>
+
+  <h3>2.2 政治经济学：三条出路全部堵死</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>出路</th><th>现实检验</th><th>结论</th></tr>
+    <tr><td><strong>削减赤字</strong></td><td>社保+医保+利息占支出约2/3，法定刚性；选举周期（2-4年）与债务周期（30年）错配</td><td><strong>政治上不可能</strong></td></tr>
+    <tr><td><strong>技术性违约</strong></td><td>美元储备地位建立在"美债无风险"信仰上</td><td><strong>不敢</strong></td></tr>
+    <tr><td><strong>通胀化债</strong></td><td>用通胀与低实际利率稀释债务——罗马帝国、1970年代美国、2010年代日本的共同选择</td><td><strong>唯一可行之路</strong></td></tr>
+  </table></div>
+  <p><strong>黄金牛市的第一性原理</strong>：当一国债务大到只能靠"印钱+压低实际利率"维持时，债权人必然要求补偿，而黄金是唯一<strong>不依赖任何债务人偿付能力</strong>的资产。1970年代美国用7年负实际利率消化越战债务，同期黄金涨23倍；今天美国债务/GDP（122%）已超1946年二战峰值（106%），却没有战后增长奇迹来稀释它。</p>
+
+  <h3>2.3 "贝森特看跌期权"拆解</h3>
+  <p>8月19日财政部回购翻倍至单次40亿美元，金价当日涨超4%。但拆开看：巴克莱测算全年回购约640亿，仅占20-30年期年发行量15%；回购资金来自增发短债——总债务一分未减；回购次日20年期美债中标收益率5.204%创2004年来新高，30年期两天内重返5.28%。<strong>市场用真金白银宣告：技术性干预接不住天量供给。</strong>这恰恰证明美国财政已进入"必须干预"阶段，而干预的尽头是财政货币化。</p>
+  <blockquote>长逻辑的判决：无论美联储加息（债务更痛）还是放水（实际利率更负），黄金都是受益方——这不是乐观，这是数学。</blockquote>
+
+  <h2>3. 地缘与货币体系重构：制度性买盘</h2>
+
+  <h3>3.1 从"叙事"到"基建"：去美元化已落地</h3>
+  <div class="chart">
+    <img src="charts/chart9_monetary_reset.png" alt="货币体系重构">
+    <div class="cap">图2：美元储备份额创30年新低（56.32%），央行购金连破千吨</div>
+  </div>
+  <div class="tbl-scroll"><table>
+    <tr><th>里程碑</th><th>时间</th><th>意义</th></tr>
+    <tr><td>俄罗斯约3,000亿美元储备被冻结</td><td>2022年</td><td>全球央行的心理转折点：存在西方体系的储备，说冻结就冻结</td></tr>
+    <tr><td>美元储备份额跌破57%</td><td>2026年Q1（56.32%）</td><td>30年最低（2001年为72%），连续8个季度下行</td></tr>
+    <tr><td><strong>央行黄金市值首超美债持仓</strong></td><td>2026年8月</td><td>黄金3.93万亿 vs 美债3.88万亿，<strong>54年来首次</strong></td></tr>
+    <tr><td>BRICS Pay上线</td><td>2026年</td><td>整合CIPS/SPFS，本币结算绕开SWIFT</td></tr>
+    <tr><td>"The Unit"数字代币</td><td>2026年</td><td><strong>40%黄金+60%货币篮子</strong>——黄金成为新结算体系价值锚</td></tr>
+    <tr><td>金砖本币结算占比67%</td><td>2026年</td><td>沙特对华石油人民币结算已达41%，石油美元裂缝</td></tr>
+  </table></div>
+  <p><strong>关键认知</strong>：去美元化不是情绪叙事——2026年的区别在于<strong>基建已经落地</strong>。当替代基础设施开始运转，参与者的资产配置就从"观点"变成"必须"。</p>
+
+  <h3>3.2 央行行为的性质：三个证据</h3>
+  <div class="chart">
+    <img src="charts/chart4_central_bank_gold.png" alt="主要央行净购金">
+    <div class="cap">图3：2026年1-5月主要央行净购金（中国上半年累计40吨，7月单月+64万盎司创两年最大）</div>
+  </div>
+  <p><strong>持续性</strong>：2022-2025年全球央行购金1,082 → 1,037 → 1,045 → <strong>1,237吨（历史纪录）</strong>，此前50年均值不足500吨。<strong>广度</strong>：73%的央行预计美元份额继续下降，43%计划增持黄金。<strong>中国维度</strong>：连续21个月增持，黄金仅占外储8-10%（新兴市场均值17-20%），增持远未到位。</p>
+  <p><strong>诚实的反例</strong>：俄罗斯2026年卖出43.5吨黄金填补战争赤字——但注意细节：俄罗斯卖黄金<strong>恰恰因为被冻结的美元欧元动不了，黄金是它唯一能变现的储备</strong>。这反向证明黄金是"最后的钱"。卖金的俄罗斯是特例，买金的央行是普遍现象。</p>
+
+  <h2>4. 周期定位：我们身处何处</h2>
+
+  <h3>4.1 三轮牛市对照</h3>
+  <div class="chart">
+    <img src="charts/chart7_three_cycles.png" alt="三轮黄金大牛市对照">
+    <div class="cap">图4：三轮大牛市——涨幅逐轮递减，但每次-30%以上的深蹲后都再创新高</div>
+  </div>
+  <div class="tbl-scroll"><table>
+    <tr><th>维度</th><th>第一轮（1971-1980）</th><th>第二轮（2001-2011）</th><th>第三轮（2018-至今）</th></tr>
+    <tr><td>起点→峰值</td><td>35→850美元</td><td>252→1,921美元</td><td>1,160→5,608美元</td></tr>
+    <tr><td>总涨幅</td><td>+23.3倍</td><td>+6.6倍</td><td>+3.8倍</td></tr>
+    <tr><td>牛市内最大回撤</td><td><strong>-43.2%</strong>（1974-76）</td><td><strong>-34.0%</strong>（2008）</td><td><strong>-30.0%</strong>（2026上半年）</td></tr>
+    <tr><td>回撤后表现</td><td>再涨+717%</td><td>再涨+182%</td><td><strong>？</strong></td></tr>
+    <tr><td>终结原因</td><td>沃尔克加息至20%</td><td>QE退出+美元走强</td><td><strong>尚未发生</strong></td></tr>
+  </table></div>
+  <p><strong>三个周期规律</strong>：①每轮牛市都有一次-30%以上的中期深蹲，深蹲后才是最陡峭的主升段——2026年上半年的-30%在周期尺度上是<strong>常态而非异象</strong>；②牛市终结从来不是散户行为造成的，而是央行（美联储）行为逆转造成的——散户狂热只能制造"阶段性顶部"（如1月的5,608），不能终结牛市；③涨幅逐轮递减但回撤也逐轮收窄——本轮应预期"震荡上行+中枢抬升"，不宜期待短期翻倍。</p>
+
+  <h3>4.2 牛市终结条件核对：当前零触发</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>终结条件（历史必要条件）</th><th>1980年</th><th>2011年</th><th>2026年8月当前</th></tr>
+    <tr><td>①美联储持续激进加息、实际利率大幅转正</td><td>利率20%</td><td>QE退出+2015加息</td><td><strong>未触发</strong>：利率3.50-3.75%，9月加息概率33-40%，实际利率仍为负</td></tr>
+    <tr><td>②美元进入超级牛市</td><td>美元5年+50%</td><td>2014-15走强</td><td><strong>未触发</strong>：美元指数99附近、趋势向下</td></tr>
+    <tr><td>③强劲替代资产</td><td>美股18年长牛启动</td><td>美股科技牛</td><td><strong>部分出现</strong>：AI叙事强，但依赖6.98%高息发债，是"烧钱的繁荣"</td></tr>
+    <tr><td>④央行集体抛售黄金</td><td>持续抛售</td><td>售金协议</td><td><strong>完全相反</strong>：年购金1,237吨创纪录</td></tr>
+  </table></div>
+  <blockquote>用历史尺子衡量：当前不是牛市终点，更接近1976年或2009年——深蹲之后、主升之前的路段。</blockquote>
+
+  <h2>5. 交易群体行为分析：筹码结构决定节奏</h2>
+
+  <h3>5.1 1月见顶的行为学复盘</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>阶段</th><th>行为特征</th><th>数据</th></tr>
+    <tr><td>冲顶（1月）</td><td>散户杠杆狂热</td><td>单月+30%、RSI突破90、金银比被逼至44</td></tr>
+    <tr><td>挤压（1月29日）</td><td>保证金不足→被动平仓</td><td>CME月内<strong>第四次</strong>上调保证金</td></tr>
+    <tr><td>崩盘（1月30日）</td><td>强平连锁反应</td><td>黄金单日-9.5%（40年最大）；白银盘中-36%，<strong>约12万人爆仓42亿美元</strong></td></tr>
+    <tr><td>出清（2-6月）</td><td>获利盘交替离场</td><td>最深-30%，ETF二季度净流出45吨</td></tr>
+  </table></div>
+  <p><strong>行为学结论</strong>：1月顶部是"拥挤交易+杠杆踩踏"，而非基本面逆转——<strong>吹大泡沫的是散户杠杆，刺破泡沫的是保证金规则，全程与黄金定价逻辑（债务、央行）无关</strong>。这解释了为什么随后中国机构在4,000美元大举抄底、央行购金二季度反而加速62%：聪明钱分得清杠杆出清与逻辑出清。</p>
+
+  <h3>5.2 当前筹码结构：谁在场内，谁还没来</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>参与者</th><th>当前状态</th><th>判断</th></tr>
+    <tr><td><strong>各国央行</strong></td><td>Q2购金289吨（+62%）</td><td><strong>结构性买盘，不看价格按月执行</strong>——金价下方的"混凝土底板"</td></tr>
+    <tr><td><strong>西方ETF资金</strong></td><td>SPDR回升至1,034.65吨，<strong>仍比2011年峰值低24%</strong></td><td>刚开始回流，远未拥挤——未来12个月最大潜在增量</td></tr>
+    <tr><td><strong>COT投机净多</strong></td><td>黄金14.59万手（8月18日当周）</td><td><strong>已回到1月见顶前拥挤水平</strong>——短期追高危险</td></tr>
+    <tr><td><strong>白银投机净多</strong></td><td><strong>仅1.08万手，历史低位</strong></td><td>散户参与度极低，反而健康——上行燃料尚未点燃</td></tr>
+    <tr><td><strong>中国零售资金</strong></td><td>金饰需求量-17%但金额+22%</td><td>散户高位谨慎，未见狂热</td></tr>
+  </table></div>
+  <p><strong>核心洞察</strong>：本轮筹码结构与2011年末（散户ETF极度拥挤）、1980年（亨特兄弟逼仓）根本不同——底部买盘是央行（不计价格），西方散户才刚开始回流。历史上"机构与央行在场、散户尚未狂热"的阶段，恰恰是牛市中段而非终点。但COT拥挤提示：短期随时可能出现4-6%的技术性回踩（第一支撑4,400）。</p>
+
+  <h3>5.3 散户生存法则：从2013年"中国大妈"说起</h3>
+  <p>2013年大妈在1,400美元抄底6年才解套——失败不在方向（金价最终涨到2,075），而在：①买在下跌半山腰（用光弹药）；②对抗的是机构抛售周期（美联储退出QE、SPDR持续减仓）。2026年的对照：买盘主力是央行（比任何机构都有耐心和火力），散户角色从"对抗机构"变成"跟随央行"。生存法则：<strong>用"央行不会买的价位"（拥挤过热位）兑现，用"央行持续在买的价位"（恐慌回调位）布局。</strong></p>
+
+  <h2>6. 情景推演：三种世界的应对预案</h2>
+  <div class="scenario a">
+    <h4>情景A：软着陆+回购兑现 <span class="prob">概率50%</span></h4>
+    <p><strong>触发信号</strong>：PCE温和（8月27日）；FOMC维持不动（9月15-16日）；回购单次≥30亿（9月9日首验）。</p>
+    <p><strong>路径</strong>：金价先回踩4,450-4,500消化获利盘，Q4挑战4,800-5,000；白银补涨至72-75。</p>
+    <p><strong>预置动作</strong>：回踩4,450分批加至标准仓位；金价破4,800减机动仓1/3。</p>
+  </div>
+  <div class="scenario b">
+    <h4>情景B：二次通胀+加息落地 <span class="prob">概率30%</span></h4>
+    <p><strong>触发信号</strong>：PCE超预期→加息概率破50%→9月或11月加息25bp。</p>
+    <p><strong>路径</strong>：重演5-7月剧本，实际利率上行触发急跌，金价4,300→4,100（回撤6.5%-11%），白银跌更狠。</p>
+    <p><strong>预置动作</strong>：<strong>黄金坑预案</strong>：4,300投入第二档、4,100投入第三档弹药；白银止损线同步下移，不加杠杆摊平。</p>
+  </div>
+  <div class="scenario c">
+    <h4>情景C：信用/地缘事件 <span class="prob">概率20%</span></h4>
+    <p><strong>触发信号</strong>：银行倒闭（前FDIC主席已警告浮亏风险）；美债拍卖流标；霍尔木兹或台海升级。</p>
+    <p><strong>路径</strong>：<strong>先流动性冲击后暴涨</strong>——所有资产被抛售换美元，金价短期急跌（参考2008年9月-25%）→美联储被迫重启QE→金价V型反转冲5,000+。</p>
+    <p><strong>预置动作</strong>：冲击期不做任何买入（跌20%也不接），等QE反转信号出现后48小时内用完所有弹药。</p>
+  </div>
+  <p><strong>三条路径的共同点</strong>：B和C都先制造更深回调、然后是更猛的上涨——<strong>"回调是买点"的严密含义：不是无视回调，而是三种情景里两种的终点是更高的价格</strong>。唯一要防备的是C情景冲击阶段的"最后一跌"（所有资产同跌，现金为王）。</p>
+
+  <h3>路标日历（未来90天）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>日期</th><th>事件</th><th>关键阈值</th></tr>
+    <tr><td>8月26日</td><td>兴业银锡分红登记</td><td>—</td></tr>
+    <tr><td>8月27日前后</td><td>美国7月PCE</td><td><strong>9月加息概率是否突破50%</strong></td></tr>
+    <tr><td>8月29日</td><td>兴业银锡中报</td><td>净利是否在21.4-23.7亿预增区间上沿</td></tr>
+    <tr><td>9月9日</td><td>财政部回购首次执行</td><td><strong>单次是否≥30亿美元</strong>（&lt;30亿=托底证伪）</td></tr>
+    <tr><td>9月15-16日</td><td><strong>FOMC会议（全年最大变量）</strong></td><td>加息/不动/点阵图基调</td></tr>
+    <tr><td>10月7日前后</td><td>中国央行8月购金数据</td><td>是否连续22个月增持</td></tr>
+    <tr><td>10月中</td><td>Q3全球央行购金数据</td><td>是否延续Q2的289吨</td></tr>
+    <tr><td>11月</td><td>美国中期选举</td><td>财政扩张预期是否强化</td></tr>
+  </table></div>
+
+  <h2>7. 投资操作手册</h2>
+
+  <h3>7.1 仓位结构表（以100万可投资产为例）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>层级</th><th>标的</th><th>代码</th><th>占比</th><th>角色</th><th>介入条件</th></tr>
+    <tr><td>底仓-确定性</td><td>华安黄金ETF</td><td>518880</td><td>5%</td><td>赚金价本身的钱</td><td>回踩4,450-4,500建满</td></tr>
+    <tr><td>底仓-经营杠杆</td><td>山东黄金</td><td>600547</td><td>3%</td><td>利润放大器</td><td>回踩5日线/金价4,450时建仓</td></tr>
+    <tr><td>机动仓-黄金</td><td>赤峰黄金/黄金股ETF</td><td>600988/517520</td><td>7%</td><td>做T+回调加仓弹药</td><td>分三档梯度投入</td></tr>
+    <tr><td>卫星仓-白银</td><td>兴业银锡</td><td>000426</td><td>3%</td><td>白银弹性首选</td><td>回踩不破前平台；金银比&gt;70加仓</td></tr>
+    <tr><td>卫星仓-白银</td><td>盛达资源</td><td>000603</td><td>1%</td><td>小盘高弹性</td><td>仓位刻意最轻（信披争议）</td></tr>
+    <tr><td><strong>预留弹药</strong></td><td>现金</td><td>—</td><td><strong>81%</strong></td><td>等待击球点</td><td>严格按梯度执行</td></tr>
+  </table></div>
+
+  <h3>7.2 三档加仓梯度（针对机动仓7%）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>档位</th><th>触发价位（金价）</th><th>投入比例</th><th>对应情景</th></tr>
+    <tr><td>第一档</td><td>回踩<strong>4,400-4,450</strong>（-4.3%，第一支撑）</td><td>40%</td><td>情景A的正常回踩（大概率8月底-9月中出现）</td></tr>
+    <tr><td>第二档</td><td>下探<strong>4,300</strong>（加息概率破50%）</td><td>30%</td><td>情景B前半段</td></tr>
+    <tr><td>第三档</td><td>恐慌位<strong>4,100-4,150</strong></td><td>30%</td><td>情景B/C的黄金坑——对应6月底部区域</td></tr>
+    <tr><td>白银加仓</td><td>银价回踩<strong>65美元</strong>或金银比<strong>&gt;70</strong></td><td>白银仓位的50%</td><td>用金银比做安全边际</td></tr>
+  </table></div>
+  <p><strong>反向纪律</strong>：金价单日涨幅&gt;4%<strong>永不买入</strong>；板块单日急拉5%+（多股涨停）卖出机动仓50%，回踩2-3%接回；金银比跌破<strong>50</strong>时白银半仓换黄金，跌破<strong>45</strong>（1月逼仓水平）清仓白银——那是投机末端。</p>
+
+  <h3>7.3 每周检查清单（周日10分钟）</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>#</th><th>指标</th><th>查询方式</th><th>阈值与动作</th></tr>
+    <tr><td>1</td><td>30年期美债收益率</td><td>Trading Economics</td><td>站稳<strong>5.3%</strong>三个交易日→黄金减仓10%</td></tr>
+    <tr><td>2</td><td>CME加息概率</td><td>cmegroup.com</td><td>概率<strong>破50%</strong>→暂停加仓，启动情景B预案</td></tr>
+    <tr><td>3</td><td>SPDR黄金ETF持仓</td><td>gold.org</td><td>连续3日累计流出<strong>&gt;5吨</strong>→机动仓减半</td></tr>
+    <tr><td>4</td><td>COT投机净多头</td><td>CFTC周五发布</td><td>黄金净多<strong>&gt;20万手</strong>→过热，机动仓减半</td></tr>
+    <tr><td>5</td><td>金银比</td><td>行情软件</td><td><strong>&gt;70</strong>加白银；<strong>&lt;50</strong>减白银；<strong>&lt;45</strong>清仓白银</td></tr>
+    <tr><td>6</td><td>中国央行购金</td><td>每月7日外管局</td><td><strong>连续2个月停止增持</strong>→减仓至底仓</td></tr>
+  </table></div>
+
+  <h3>7.4 牛市终结清单（何时整体离场）</h3>
+  <p>以下条件<strong>同时满足3条以上</strong>，无条件清仓贵金属仓位：</p>
+  <ol class="checklist">
+    <li>美联储连续加息2次以上，且点阵图显示更多加息；</li>
+    <li>实际利率（10年TIPS）转正并持续上行超过50个基点；</li>
+    <li>美元指数站稳105以上且趋势向上；</li>
+    <li>全球央行购金年化降至500吨以下（连续两个季度）；</li>
+    <li>金银比跌破45且白银单月涨幅超50%（投机狂热末端）；</li>
+    <li>30年美债收益率趋势性回落至4.5%以下（财政信用修复）。</li>
+  </ol>
+  <p><strong>当前核对：0/6触发。</strong></p>
+
+  <h3>7.5 具体标的逻辑与风险</h3>
+  <div class="tbl-scroll"><table>
+    <tr><th>标的</th><th>一句话逻辑</th><th>必须盯住的风险</th></tr>
+    <tr><td>山东黄金600547</td><td>纯金龙头，Q1净利+102%，克金成本220-250元；前瞻PE16-17倍 vs 历史中位25-30倍</td><td>矿难/安全事故；金价破4,350估值逻辑受损</td></tr>
+    <tr><td>赤峰黄金600988</td><td>民营机制灵活，上半年预增54-61%，黄金均价+43%纯受益者</td><td>海外矿山所在国政治风险</td></tr>
+    <tr><td>兴业银锡000426</td><td>中国34.56%白银储量+预增169-198%+PE11.9倍，"低估值高增速"罕见组合</td><td>收购*ST威领争议；8月29日中报不及预期会杀估值</td></tr>
+    <tr><td>盛达资源000603</td><td>A股唯一独立原生银矿主业，银价纯度最高，小市值高弹性</td><td>8月18日股民维权征集（信披争议）——仓位最小、止损最严</td></tr>
+    <tr><td>白银LOF 161226</td><td>无期货账户的白银替代工具</td><td>跟踪沪银期货有移仓损耗，只适合波段</td></tr>
+  </table></div>
+
+  <h3>7.6 A股与外盘联动规律（做T必备）</h3>
+  <p>外盘金价隔夜涨&gt;2% → A股黄金股高开2-4%，<strong>高开追买胜率最低</strong>，等盘中回踩；外盘涨、A股<strong>高开低走收阴</strong> → 短期见顶信号；金价涨但黄金股不涨（背离3日以上）→ 警惕获利了结潮；人民币升值会吃掉沪金涨幅（美元金价涨2%+人民币升值0.5% → 沪金实际涨约1.5%）。</p>
+
+  <h2>8. 反方观点与自我驳斥</h2>
   <div class="card">
-    <p><strong>行情定位</strong>：黄金处于"1月历史高点5,608美元 → 深度回撤30% → 8月重启升势"的修复阶段；白银距1月高点121.64美元仍有约44%空间，弹性显著大于黄金。</p>
-    <p><strong>核心矛盾</strong>：市场处于"<strong>财政主导</strong>（美国债务突破40万亿美元、财政部干预债市）与<strong>货币紧缩</strong>（美联储鹰派主席沃什、9月加息概率36.2%）"两股力量的拉锯中。前者决定长期方向向上，后者制造短期剧烈波动。</p>
-    <p><strong>基本面支撑</strong>：全球央行二季度购金289吨（同比+62%）；白银连续第六年短缺；金银比66.4仍高于历史均值60，白银相对低估。</p>
-    <p><strong>策略判断</strong>：黄金为底仓逢回调分批布局；白银为弹性品种，以金银比修复至60-65为中期目标，严控仓位与止损。<strong>9月15-16日FOMC会议是四季度前最大的方向性变量</strong>。</p>
+    <p><strong>反方一："黄金是下一个茅指数泡沫"（国投证券）</strong></p>
+    <p>驳斥：茅指数泡沫的本质是"盈利预期透支+公募抱团"。而黄金当前：SPDR持仓仅为2011年峰值的76%、金饰消费量-17%、COT净多14.6万手（2020年曾达30万手）。<strong>涨的是央行和实物资金，散户和西方机构远未拥挤。</strong>茅指数涨的是"盈利预期"（可被证伪），黄金涨的是"美元信用折价"（只要40万亿债务在涨，折价就没有定价完）。承认的内核：短期确实拥挤，技术性回调随时发生。</p>
+    <p><strong>反方二："美元将反弹压制黄金"</strong></p>
+    <p>驳斥：美元反弹的两个前提正在瓦解——美国经济相对走强（7月非农-2.3万、劳动参与率五年新低）与利差逻辑（加息概率从67%回落到33-40%）。更重要的是<strong>央行购金对美元的敏感度远低于投机资金</strong>：2022-2024年美元指数从90涨到107期间，央行购金照样连续破千吨。承认的内核：情景B兑现时美元阶段性走强会加深回调——已在预案内。</p>
+    <p><strong>反方三（最有分量）："流动性冲击会杀死一切，包括黄金"</strong></p>
+    <p>若信用事件爆发，市场先抛售一切换美元流动性——2008年9-10月金价曾跌25%。<strong>黄金的避险属性在流动性危机第一阶段是失效的。</strong>应对：情景C"冲击期不做任何买入，等QE信号48小时后再动手"。黄金的终极避险能力在危机第二阶段（央行救市之后）——2008年流动性冲击结束后12个月金价上涨65%。</p>
   </div>
 
-  <h2>1. 引言</h2>
-  <p>2026年是贵金属市场极不寻常的一年。黄金在1月冲上 <strong>5,608美元</strong> 的历史极值后经历40年最大单日跌幅，白银则在触及 <strong>121.64美元</strong> 后单日盘中闪崩36%。经历上半年的深度调整后，8月美国财政部扩大长期国债回购规模，再度点燃"贬值交易"，贵金属重拾升势。</p>
-  <p>本报告回答三个问题：<strong>本轮牛市的驱动因素是否仍然成立？黄金与白银谁的风险收益比更优？当前时点应如何配置与风控？</strong></p>
+  <h2>9. 结论</h2>
+  <p><strong>美国40万亿美元的债务与26%的利息吞噬比例，已经把"财政货币化"从选择变成了必然，这构成了黄金十年级别定价逻辑的地基；央行购金的制度化、BRICS支付基建的落地、黄金储备市值54年来首超美债，把这场牛市从"投机周期"升级为"货币体系重估"——历史上每轮牛市终结所必需的"激进加息+美元超级牛市+央行转向抛售"，当前一个都没有出现。</strong>短期而言，COT持仓拥挤与三周13%的涨幅意味着9月FOMC前后大概率出现4,400乃至4,100-4,300的回调，但三种情景推演显示其中两种的终点是更高的价格——回调的性质是买点，需要防备的只是流动性冲击阶段"最后一跌"的纪律空白。操作上，以"底仓8%+机动仓7%+白银卫星仓4%"的三层结构参与，用三档价格梯度消化回调的不确定性，用每周六个指标的检查清单代替临场情绪决策，用六条终结清单锁定整体离场时点——<strong>预测交给逻辑，执行交给纪律，这是普通投资者在贵金属大周期里唯一的生存与获利之道。</strong></p>
 
-  <h2>2. 行情回顾：从极端狂热到深度洗牌，再到修复重启</h2>
-
-  <h3>2.1 黄金：历史高点后的"V型"修复</h3>
-  <div class="chart">
-    <img src="charts/chart1_gold_price_2026.png" alt="2026年国际金价关键节点走势">
-    <div class="cap">图1：2026年国际金价关键节点走势</div>
-  </div>
-  <div class="tbl-scroll"><table>
-    <tr><th>时点</th><th>价格（美元/盎司）</th><th>事件</th></tr>
-    <tr><td>2026年1月初</td><td>约4,300</td><td>年初起涨</td></tr>
-    <tr><td>2026年1月29日</td><td><strong>5,608</strong></td><td>创历史新高</td></tr>
-    <tr><td>2026年1月30日</td><td>单日暴跌9.5%</td><td>沃什提名+CME上调保证金+获利了结，40年最大单日跌幅</td></tr>
-    <tr><td>2026年6月底</td><td>约3,900+</td><td>最大回撤约30%，击穿4,000关口</td></tr>
-    <tr><td>2026年8月19-20日</td><td><strong>4,522.78</strong></td><td>财政部扩大回购，单日大涨超4%</td></tr>
-    <tr><td>2026年8月21日</td><td>约4,520</td><td>同比+35%，距高点仍低约19%</td></tr>
-  </table></div>
-  <p><strong>分析</strong>：黄金2026年走势分三阶段。<strong>第一阶段（1月）杠杆驱动的加速冲顶</strong>——单月涨幅超30%、RSI突破90；1月30日鹰派人物沃什获提名出任美联储主席成为导火索，叠加芝商所月内第四次上调保证金，高杠杆多头被迫平仓，形成"下跌—强平—再下跌"的恶性循环。<strong>第二阶段（2-6月）货币紧缩定价的深度调整</strong>——缩表信号、通胀反弹、美元信用重建推动美元走强，金价最大回撤约30%，二季度黄金ETF净流出45吨，6月单月流出约89亿美元。<strong>第三阶段（8月至今）财政主导逻辑下的修复重启</strong>——8月19日财政部将10-30年期国债回购上限翻倍至单次40亿美元，长端收益率回落、美元指数跌破99，金价单日大涨超4%。本轮修复伴随SPDR黄金ETF持仓8月增持27.6吨至1,034.65吨，西方资金回流与中国机构在4,000美元关口的抄底形成东西方共振。</p>
-  <blockquote>1月的暴跌不是牛市终结，而是杠杆出清；8月的重启不是情绪反弹，而是财政信用折价的长逻辑定价。</blockquote>
-
-  <h3>2.2 白银：腰斩之后，弹性正在回归</h3>
-  <div class="chart">
-    <img src="charts/chart2_silver_price_2026.png" alt="2026年国际银价关键节点走势">
-    <div class="cap">图2：2026年国际银价关键节点走势</div>
-  </div>
-  <div class="tbl-scroll"><table>
-    <tr><th>时点</th><th>价格（美元/盎司）</th><th>事件</th></tr>
-    <tr><td>2025年12月</td><td>约84</td><td>2025年全年+42%后的高位</td></tr>
-    <tr><td>2026年1月底</td><td><strong>121.64</strong></td><td>创历史新高，金银比一度低至44</td></tr>
-    <tr><td>2026年1月30日</td><td>盘中闪崩36%</td><td>约12万杠杆交易者爆仓42亿美元</td></tr>
-    <tr><td>2026年6-7月</td><td>60-70区间震荡</td><td>腰斩后筑底</td></tr>
-    <tr><td>2026年8月20日</td><td><strong>68.09</strong></td><td>两个月新高，同比+79%</td></tr>
-  </table></div>
-  <p><strong>分析</strong>：从121.64美元到60美元附近，白银最大回撤接近50%，远超黄金的30%——这正是白银的典型特征：市场规模仅为黄金的约十分之一、杠杆资金占比更高，波动率通常是黄金的1.5-2倍。但深度出清也意味着筹码结构大幅改善：伦敦市场可自由流通库存已从2025年9月底约1.36亿盎司的极度紧张状态回升至约2.5亿盎司，挤仓风险明显缓解。8月银价在61-62美元支撑区确认后重新站上68美元，月内涨幅约16%强于黄金的11%；同比涨幅79%约为黄金的2.3倍，弹性回归信号已经明确。</p>
-  <blockquote>白银从来不会因为"便宜"而上涨，只会因为"弹性+资金回流"而暴涨——现在两个条件都在出现。</blockquote>
-
-  <h2>3. 宏观驱动：财政主导与货币紧缩的拉锯战</h2>
-
-  <h3>3.1 财政主导：贬值交易的长逻辑</h3>
-  <div class="tbl-scroll"><table>
-    <tr><th>关键事实</th><th>数据</th></tr>
-    <tr><td>美国联邦政府债务</td><td>突破 <strong>40万亿美元</strong></td></tr>
-    <tr><td>30年期美债收益率</td><td>5.26%，逼近近20年高位5.34%</td></tr>
-    <tr><td>财政部干预</td><td>8月19日10-30年期国债回购上限翻倍至单次40亿美元，并称"还能加码"</td></tr>
-    <tr><td>黄金占全球官方储备</td><td><strong>27%</strong>（2025年底），超越美债的22%，成为第一大储备资产</td></tr>
-    <tr><td>美元储备份额</td><td>从60%以上降至约50%</td></tr>
-  </table></div>
-  <p><strong>分析</strong>：理解当前金价的关键，是理解"谁在替美债信用定价"。30年期美债收益率逼近20年高位，本质是市场对美国长期信用投下的不信任票——收益率上行不再只代表"资金成本上升"，更包含"<strong>美元信用折价</strong>"。8月19日财政部的回购干预短期压低了收益率、提振金价，但效果仅维持一个交易日，30年期收益率随即重返5.26%。这一细节极其重要：<strong>市场对"技术性干预"的信任有限，财政货币化的长期预期反而被强化</strong>。对黄金而言，这构成两难中的确定性——无论美联储选择加息抗通胀（债务利息更重、信用更受损），还是容忍通胀（实际利率为负），黄金都是受益方。日本6月减持美债264亿美元、英国减持87亿美元，正是这一逻辑的机构化表达。</p>
-
-  <h3>3.2 货币紧缩：短期波动的来源</h3>
-  <div class="tbl-scroll"><table>
-    <tr><th>关键事实</th><th>数据</th></tr>
-    <tr><td>联邦基金利率</td><td>3.50%-3.75%，连续5次会议维持不变</td></tr>
-    <tr><td>美联储主席</td><td>凯文·沃什（鹰派），强调价格稳定、减少前瞻指引</td></tr>
-    <tr><td>7月FOMC投票</td><td>9票维持、<strong>3票主张加息25基点</strong></td></tr>
-    <tr><td>美国CPI（7月）</td><td><strong>3.4%</strong>，核心PCE高于3%</td></tr>
-    <tr><td>9月会议预期（CME）</td><td>维持概率63.8%，<strong>加息概率36.2%</strong>，降息概率不足1.5%</td></tr>
-    <tr><td>布伦特原油</td><td>93.78美元/桶，中东冲突推高通胀粘性</td></tr>
-  </table></div>
-  <p><strong>分析</strong>：下半年贵金属最大的短期逆风，是美联储从"暂停"转向"再加息"的可能性。摩根大通等机构已将9月会议预测调整为加息25个基点；驱动通胀的油价（霍尔木兹海峡通航受限）与关税传导短期难消解。这意味着<strong>波动率将维持高位</strong>——每次超预期的通胀或就业数据，都可能触发"加息预期升温→实际利率上行→金价回调"的链条。但边界同样清晰：在40万亿美元债务基数上，加息空间被财政承受能力严格限制，紧缩是"有限的紧缩"，这决定了回调深度有限。8月20日金价盘中跌破4,500美元后当日收复、自低点反弹逾2%，正是多空拉锯的现场写照。</p>
-  <blockquote>长期看财政信用贬值（利多），短期看货币紧缩反复（利空）——贵金属交易的本质是"用短期的波动换取长期的确定性"。</blockquote>
-
-  <h2>4. 供需基本面：央行购金托底黄金，工业短缺支撑白银</h2>
-
-  <h3>4.1 黄金：央行购金是最坚实的底部力量</h3>
-  <div class="chart">
-    <img src="charts/chart4_central_bank_gold.png" alt="2026年1-5月全球主要央行净购金量">
-    <div class="cap">图3：2026年1-5月全球主要央行净购金量（中国上半年累计40吨）</div>
-  </div>
-  <div class="tbl-scroll"><table>
-    <tr><th>需求/供给分项</th><th>2026年二季度</th><th>2026年上半年</th></tr>
-    <tr><td>总需求（含场外）</td><td>1,269吨（持平）</td><td>2,522吨（+2%），价值3,800亿美元创新高</td></tr>
-    <tr><td><strong>央行购金</strong></td><td><strong>289吨（+62%）</strong></td><td>345吨</td></tr>
-    <tr><td>金条与金币</td><td>307吨（持平）</td><td>784吨（+21%，2013年以来最强半年）</td></tr>
-    <tr><td>黄金ETF</td><td>净流出45吨</td><td>净流入18吨（8月SPDR再增27.6吨）</td></tr>
-    <tr><td>金饰需求</td><td>278吨（-17%）</td><td>572吨，消费金额+22%至860亿美元</td></tr>
-    <tr><td>金矿供应</td><td>966吨（+2%）</td><td>回收金-6%</td></tr>
-  </table></div>
-  <p><strong>分析</strong>：2026年黄金市场最重要的结构特征，是"<strong>西方金融资本卖出、东方实物资本与各国央行买入</strong>"的对立统一。二季度ETF净流出45吨的同时，央行净购金289吨（+62%）、金条金币创2013年以来最强上半年——两股力量方向相反，决定了金价"跌不深、底部持续抬升"。央行购金有制度性保障：<strong>45%的受访央行计划未来12个月增持，比例创历史纪录</strong>。中国央行已连续20个月增持、上半年累计购入40吨，但黄金仅占中国外储8%-10%，对比新兴市场17%-20%的平均水平，增持空间巨大。瑞银预计全年央行购金750-1,000吨，这种"不计价格、按月执行"的刚性买盘，是黄金区别于一切投机资产的核心特征。金饰消费量降17%但金额增22%——黄金的货币属性正在压倒商品属性。</p>
-
-  <h3>4.2 白银：连续六年短缺，但需求结构正在换挡</h3>
-  <div class="chart">
-    <img src="charts/chart5_silver_deficit.png" alt="白银市场供需缺口">
-    <div class="cap">图4：白银市场连续第六年短缺，2026年缺口扩大</div>
-  </div>
-  <div class="tbl-scroll"><table>
-    <tr><th>供需分项</th><th>2025年</th><th>2026年（预测）</th></tr>
-    <tr><td>市场缺口</td><td>40.3百万盎司</td><td><strong>46.3百万盎司（扩大）</strong></td></tr>
-    <tr><td>总需求</td><td>11.31亿盎司</td><td>约11.3亿盎司（-2%）</td></tr>
-    <tr><td>工业需求占比</td><td>约60%</td><td>57%-60%</td></tr>
-    <tr><td>光伏用银</td><td>1.87亿盎司（-6%）</td><td><strong>1.51亿盎司（-19%）</strong></td></tr>
-    <tr><td>电子电气用银</td><td>—</td><td><strong>+18%</strong>（AI服务器、5G、芯片）</td></tr>
-  </table></div>
-  <p><strong>分析</strong>：<strong>短缺是硬约束</strong>——2026年将录得连续第六年供不应求，缺口扩大至46.3百万盎司；2021-2026年累计约7.62亿盎司的库存消耗把缓冲垫磨到历史低位。供给刚性几乎无解：全球70%以上白银是铜铅锌矿的伴生副产品，新矿山投产需5-10年。<strong>但需求结构变化必须正视</strong>：光伏"去银化"加速（银包铜、0BB、电镀铜），2026年光伏用银预计下降19%；对冲力量来自AI与电气化——AI服务器单机柜耗银量比传统机型高约30%，新能源车单车用银量为燃油车1.5-2倍，电子电气用银2026年增长18%。中国6月银矿进口同比激增62.5%印证工业补库真实需求。综合判断：<strong>短缺托底+工业换挡，白银下行有底、上行有顶，单边翻倍行情难以复制</strong>。</p>
-  <blockquote>黄金买"信用贬值"，白银买"短缺+弹性"——前者是长坡厚雪，后者是锋利的刀。</blockquote>
-
-  <h2>5. 黄金 vs 白银：金银比视角下的相对性价比</h2>
-  <div class="chart">
-    <img src="charts/chart3_gold_silver_ratio.png" alt="金银比走势">
-    <div class="cap">图5：金银比走势——白银仍相对低估</div>
-  </div>
-  <div class="chart">
-    <img src="charts/chart6_gold_vs_silver.png" alt="黄金vs白银对比">
-    <div class="cap">图6：黄金 vs 白银核心指标对比</div>
-  </div>
-  <div class="tbl-scroll"><table>
-    <tr><th>维度</th><th>黄金</th><th>白银</th></tr>
-    <tr><td>当前价格</td><td>约4,520美元</td><td>约68美元</td></tr>
-    <tr><td>同比涨幅</td><td>+35%</td><td><strong>+79%</strong></td></tr>
-    <tr><td>距历史高点回撤</td><td>约-19%</td><td><strong>约-44%（修复空间大）</strong></td></tr>
-    <tr><td>波动率</td><td>基准</td><td>黄金的1.5-2倍</td></tr>
-    <tr><td>核心驱动</td><td>央行购金、信用对冲</td><td>货币逻辑+工业短缺（双重属性）</td></tr>
-    <tr><td>机构目标价</td><td>德银/瑞银年底4,600；花旗4,500</td><td>摩根大通均价81；汇丰75；花旗70；美银看100+</td></tr>
-    <tr><td>角色定位</td><td><strong>底仓、压舱石</strong></td><td><strong>弹性增强、进攻仓位</strong></td></tr>
-  </table></div>
-  <p><strong>分析</strong>：当前金银比 <strong>66.4</strong>，高于近50年均值60，白银相对低估约10%。历史规律显示，贵金属牛市中后段资金往往从黄金溢出追逐白银：若金银比回归至60-65，银价有约10%修复空间（看75-76美元）；若回归55-60，可看78-80美元，与摩根大通81美元全年均价预测形成交叉验证。但须强调两个约束：其一，<strong>金银比回归不具备必然性</strong>——1月曾低至44，极端环境下也可能长期高位；其二，<strong>弹性是双刃剑</strong>——白银仓位必须轻于黄金、止损必须严于黄金。合理结构是"黄金为盾、白银为矛"：比值高于70时增配白银，低于50时减配白银，动态再平衡。</p>
-  <blockquote>金银比66意味着"黄金已经证明了自己，白银还在等待证明"——而后者往往才是超额收益的来源。</blockquote>
-
-  <h2>6. 风险因素：必须直视的四只"灰犀牛"</h2>
-  <div class="tbl-scroll"><table>
-    <tr><th>风险</th><th>触发条件</th><th>影响</th><th>概率评估</th></tr>
-    <tr><td><strong>9月FOMC加息</strong></td><td>8-9月通胀数据超预期</td><td>实际利率上行，贵金属快速回调5-10%</td><td>中（CME概率36.2%）</td></tr>
-    <tr><td><strong>获利了结</strong></td><td>金价月涨10%+后情绪过热</td><td>短线回调至4,400-4,450</td><td>中高</td></tr>
-    <tr><td><strong>杠杆踩踏重演</strong></td><td>CME再度上调保证金</td><td>白银闪崩风险（参考1月30日）</td><td>低-中</td></tr>
-    <tr><td><strong>光伏去银化超预期</strong></td><td>银包铜技术规模化提前</td><td>白银工业需求预期下修</td><td>中（慢变量）</td></tr>
-  </table></div>
-  <p><strong>分析</strong>：风险排序比罗列更重要。<strong>首位是9月15-16日FOMC会议</strong>——基准情形（63.8%）维持利率，贵金属延续修复；若8月CPI再上行（油价93美元的传导尚未完全体现），加息落地将触发5%-10%回调。<strong>第二是拥挤度风险</strong>：金价月涨超10%、银价涨超16%后获利盘堆积，1月30日的暴跌证明"涨得快"本身就是风险。<strong>第三是白银特有风险</strong>：iShares白银ETF持仓8月反复（15,275吨，较高点回落），若ETF持续流出叠加CME上调保证金，可能重演闪崩。<strong>第四是慢变量</strong>：光伏去银化逐年压缩白银工业叙事空间，白银的工业属性炒作需要"见好就收"。应对风险的唯一有效方法，是事先确定仓位上限、分批节奏和止损纪律，而非临阵决策。</p>
-  <blockquote>贵金属的风险从来不在于"逻辑错了"，而在于"用错误的仓位交易正确的逻辑"。</blockquote>
-
-  <h2>7. 投资策略：以黄金为盾、以白银为矛</h2>
-
-  <h3>7.1 配置框架</h3>
-  <div class="tbl-scroll"><table>
-    <tr><th>品种</th><th>角色</th><th>建议仓位</th><th>布局方式</th><th>目标位</th><th>纪律</th></tr>
-    <tr><td>黄金（ETF/金条）</td><td>核心底仓</td><td><strong>5%-15%</strong></td><td>回调至4,400-4,450分批买入</td><td>4,600→4,790（12个月）</td><td>底仓不止损，单日大涨4%后不追</td></tr>
-    <tr><td>白银（ETF/期货）</td><td>弹性进攻</td><td><strong>≤5%</strong></td><td>金银比&gt;70增配；回调至61-65介入</td><td>75-80（金银比回归60-65）</td><td>跌破58-60严格止损</td></tr>
-    <tr><td>A股贵金属板块</td><td>弹性替代</td><td>视风险偏好</td><td>金银价回调但股价抗跌时介入</td><td>—</td><td>波动大于实物，仓位减半</td></tr>
-  </table></div>
-
-  <h3>7.2 具体投资标的（截至2026年8月20日）</h3>
-
-  <p><strong>（1）实物与基金类——底仓工具（适合所有投资者）</strong></p>
-  <div class="tbl-scroll"><table>
-    <tr><th>标的</th><th>代码</th><th>定位与介入逻辑</th><th>注意事项</th></tr>
-    <tr><td>华安黄金ETF</td><td>518880</td><td>跟踪国内金价，规模与流动性居首，<strong>底仓首选</strong></td><td>金价回调至4,400-4,450美元区间分批买入</td></tr>
-    <tr><td>易方达黄金ETF</td><td>159934</td><td>同类备选，费率相当</td><td>同上</td></tr>
-    <tr><td>银行积存金/投资金条</td><td>—</td><td>超长期压舱石，忽略短期波动</td><td>只在回调时加，不追高</td></tr>
-    <tr><td>国投瑞银白银期货LOF</td><td>161226</td><td><strong>国内唯一白银主题基金</strong>，无期货账户者的白银工具</td><td>跟踪沪银期货，存在移仓损耗，适合波段不适合长持</td></tr>
-    <tr><td>SPDR GLD / iShares SLV</td><td>美股</td><td>有境外账户者的直连工具</td><td>注意汇率因素</td></tr>
-  </table></div>
-
-  <p><strong>（2）黄金股——弹性主力仓</strong></p>
-  <div class="tbl-scroll"><table>
-    <tr><th>标的</th><th>代码</th><th>核心逻辑（买入理由）</th><th>估值锚与目标</th></tr>
-    <tr><td><strong>山东黄金</strong></td><td>600547</td><td><strong>A股纯金龙头</strong>。2026年Q1净利同比+102%，克金成本仅220-250元/克，金价上涨几乎全部转化为利润；中期分红10派1元</td><td>2026年一致预期净利68-72亿元，前瞻PE仅16-17倍（历史中位25-30倍）；若回归25倍PE，对应市值1,700亿以上</td></tr>
-    <tr><td><strong>赤峰黄金</strong></td><td>600988</td><td><strong>民营弹性标的</strong>。上半年预增54%-61%，黄金销售均价同比+43%，机制灵活、产量爬坡</td><td>8月20日涨停，弹性大于山金，回调时优先布局</td></tr>
-    <tr><td>中金黄金</td><td>600489</td><td><strong>央企压舱石</strong>。上半年预增52%-71%，金铜双属性，硫酸等副产品增厚利润</td><td>估值低于民营同行，防御性强</td></tr>
-    <tr><td>紫金矿业</td><td>601899</td><td><strong>确定性最强的矿业龙头</strong>。8月20日特大单净流入18.21亿元居两市首位</td><td>铜属性稀释纯金弹性，适合作为有色综合配置</td></tr>
-    <tr><td>黄金股ETF</td><td>517520</td><td><strong>一键打包</strong>，规避个股黑天鹅</td><td>适合不想选股的投资者，弹性约为金价2倍</td></tr>
-  </table></div>
-
-  <p><strong>（3）白银股——高弹性卫星仓（仓位须轻于黄金股）</strong></p>
-  <div class="tbl-scroll"><table>
-    <tr><th>标的</th><th>代码</th><th>核心逻辑（买入理由）</th><th>风险提示</th></tr>
-    <tr><td><strong>兴业银锡</strong></td><td>000426</td><td><strong>白银首选</strong>。手握中国34.56%白银储量（亚洲第一、全球第七）；上半年预增169%-198%；8月19日动态PE仅11.93倍；银漫二期2028年投产、宇邦扩建后白银产量有望达1,000吨/年；8月26日分红登记、<strong>8月29日披露中报</strong></td><td>要约收购*ST威领存在市场争议；8月20日已涨停，短线追高需谨慎，等回踩</td></tr>
-    <tr><td>盛达资源</td><td>000603</td><td><strong>A股唯一以独立原生银矿为主业的标的</strong>，银价纯度最高；市值约230亿元，小盘高弹性；鸿林矿业铜金矿已投产；8月12日获广发、泰康等机构调研</td><td>PE TTM约27倍高于兴业；8月18日出现股民维权征集信息（信披争议），<strong>仓位应更轻、止损应更严</strong></td></tr>
-  </table></div>
-
-  <p><strong>（4）进出场触发条件（明确执行规则）</strong></p>
-  <div class="tbl-scroll"><table>
-    <tr><th>操作</th><th>触发条件</th><th>对应动作</th></tr>
-    <tr><td><strong>买入</strong></td><td>金价回调至4,400-4,450美元</td><td>加仓黄金ETF、山东黄金</td></tr>
-    <tr><td><strong>买入</strong></td><td>金银比升至70以上</td><td>加仓白银标的（兴业银锡优先）</td></tr>
-    <tr><td><strong>买入</strong></td><td>9月FOMC若加息引发恐慌性回调</td><td>逆向买入窗口，分批抄底</td></tr>
-    <tr><td><strong>买入</strong></td><td>兴业银锡8月29日中报超预期且股价回踩不破</td><td>加仓白银首选标的</td></tr>
-    <tr><td><strong>止盈</strong></td><td>金价接近4,600-4,790美元</td><td>黄金仓位分批兑现</td></tr>
-    <tr><td><strong>止盈</strong></td><td>兴业银锡接近48-51元机构目标区</td><td>分批兑现（国泰海通目标价48.4元）</td></tr>
-    <tr><td><strong>止盈</strong></td><td>金银比回落至50以下</td><td>白银仓位换回黄金</td></tr>
-    <tr><td><strong>止损</strong></td><td>白银股自买入价下跌15%</td><td>无条件离场</td></tr>
-    <tr><td><strong>止损</strong></td><td>金价有效跌破4,350美元</td><td>黄金股减仓，保留实物底仓</td></tr>
-  </table></div>
-
-  <p><strong>分析</strong>：标的组合的逻辑是"<strong>三层结构</strong>"——第一层实物/ETF提供确定性，赚金价本身的钱；第二层黄金股（山东黄金+赤峰黄金为核心）提供经营杠杆，历史规律显示金矿股在金价上行期的涨幅约为金价的2倍，且当前板块估值（山金前瞻PE16-17倍）处于历史底部区域，即便金价横盘，仅靠业绩兑现（板块上半年普遍预增50%-260%）也有修复空间；第三层白银股（兴业银锡+盛达资源）提供最大的价格弹性，但必须以最小仓位参与——兴业银锡11.9倍动态PE对应169%-198%的利润增速、PEG远小于1，是板块中罕见的"低估值+高增速"组合，但其收购争议与盛达资源的信披争议提醒我们：<strong>弹性标的的每一分钱仓位都要有止损预案</strong>。执行上建议"底仓+机动仓"分离：底仓（ETF+山东黄金）中期持有不动，机动仓利用板块日内波动做T降低成本——板块单日急拉5%以上时卖出机动仓，回调2-3%时接回。需特别注意，8月20日贵金属板块已集体大涨（多股涨停），短线追高风险大，理想的介入时点是板块缩量回踩5日均线或金价回踩4,400-4,450美元支撑之时。</p>
-  <blockquote>金价涨30%，山东黄金们能赚翻倍，兴业银锡们能赚两倍——但反过来也成立，所以仓位的大小必须与波动的承受力匹配。</blockquote>
-
-  <h3>7.3 节奏与关键时点</h3>
-  <p><strong>第一步（8月下旬）</strong>：金价月涨10%后不追高，等待获利了结的回调——4,400-4,450美元是前期震荡平台顶部的"顶底转换"支撑区，为分批介入第一目标区；白银对应关注65美元附近。</p>
-  <p><strong>第二步（9月中旬FOMC前后）</strong>：全年最重要的分歧窗口。若维持利率不变（基准情形），确认升势可顺势加仓；若意外加息引发恐慌回调，恰是逆向布局的黄金坑——40万亿债务约束下加息不可持续，紧缩定价越极端，随后修复越确定。</p>
-  <p><strong>第三步（四季度）</strong>：若通胀见顶回落+财政回购加码，贵金属有望挑战前高——黄金看4,600-4,790，白银看75-80。</p>
-  <p><strong>三条纪律</strong>：①仓位纪律——贵金属总仓位不超过可投资产15%-20%，白银不超过5%；②工具纪律——配置资金优先实物金条、黄金ETF等无杠杆工具，期货仅限小仓位严格止损；③情绪纪律——逆向思维，单日大涨全网热议时不追（参考1月冲顶），恐慌回调、加息预期最浓时敢买（参考6月底部）。</p>
-  <blockquote>这轮行情的正确姿势不是"预测顶部"，而是"底仓不动+回调敢买+大涨不追"。</blockquote>
-
-  <h2>8. 结论</h2>
-  <p>贵金属市场正在经历定价范式的深刻切换：从"利率与美元的机会成本定价"转向"财政信用与货币体系重构的定价"。40万亿美元的联邦债务、逼近20年高位的长端收益率、黄金超越美债成为全球第一大储备资产——这些事实共同指向：本轮牛市的底层逻辑（美元信用折价与全球储备多元化）不仅没有因上半年的深度回调而削弱，反而在回调中获得了央行购金289吨、金条金币需求创13年新高的数据确认。黄金与白银的分化揭示了市场的层次：黄金是机构与央行的"确定性资产"，白银是叠加工业短缺叙事的"弹性资产"，金银比66.4隐含的相对低估为后者保留了修复空间。短期而言，9月FOMC加息博弈与月内10%涨幅后的获利了结压力，决定波动仍将是常态；但供给刚性（央行购金、白银六年短缺）与需求韧性（AI与电气化用银）构成的基本面底盘，使每一次紧缩预期引发的回调都更接近机会而非风险。客观地说，贵金属已不处于"便宜的起点"，而是处于"昂贵但有支撑的中段"——这要求以配置而非投机的心态参与，用仓位管理和分批纪律消化高波动，用金银比的动态再平衡获取相对收益。</p>
-
-  <h2>9. 参考文献</h2>
+  <h2>10. 参考文献</h2>
   <ol class="refs">
-    <li>世界黄金协会. 2026年二季度《全球黄金需求趋势报告》[EB/OL]. china.gold.org, 2026-07-30.</li>
-    <li>世界黄金协会. Central Bank Gold Statistics: Central banks remain committed to gold[EB/OL]. gold.org, 2026-07.</li>
+    <li>世界黄金协会. 2026年二季度《全球黄金需求趋势报告》与《2026年央行黄金调查》[EB/OL]. gold.org, 2026-07.</li>
     <li>The Silver Institute &amp; Metals Focus. World Silver Survey 2026[EB/OL]. silverinstitute.org, 2026-04.</li>
-    <li>Trading Economics. Gold / Silver - Price, Chart, Historical Data[EB/OL]. zh.tradingeconomics.com, 2026-08-20.</li>
-    <li>上海证券报. 黄金，多极时代的新底仓？[EB/OL]. 2026-08-20.</li>
-    <li>华尔街见闻. 早餐FM-Radio 2026年8月21日[EB/OL]. 2026-08-21.</li>
-    <li>每日经济新闻. 美联储9月维持利率不变的概率为63.8%（CME美联储观察）[EB/OL]. 2026-08-21.</li>
-    <li>Polymarket Intel. Polymarket Signals Strong Doubt on Fed Rate Cut in September 2026[EB/OL]. 2026-08-14.</li>
-    <li>中国黄金网. 金价涨了，银价也可能迎来补涨机会？[EB/OL]. 2026-08-07.</li>
-    <li>Discovery Alert. Silver Market Deficit Widens in 2026 Despite Falling Solar Demand[EB/OL]. 2026-08-20.</li>
-    <li>什么值得买. 白银半年坐过山车：从120到60被套还是机会？[EB/OL]. 2026-08-06.</li>
-    <li>什么值得买. 2026年1月30日国际金价单日暴跌超12%，创40年最大跌幅[EB/OL]. 2026-02-01.</li>
-    <li>preciousmetalprices.com. Gold-Silver Ratio Current &amp; Historical[EB/OL]. 2026-08-21.</li>
-    <li>新浪财经. 对话鲁政委、宋雪涛：2026年金价反常走势背后的核心逻辑[EB/OL]. 2026-07-22.</li>
-    <li>中新经纬. 多家黄金股预喜：招金、西部上半年净利涨数倍，中金、赤峰等两位数增长[EB/OL]. 2026-07-14.</li>
-    <li>东方财富网. 为什么是兴业银锡（储量、产能、估值分析）[EB/OL]. 2026-08-19.</li>
-    <li>东方财富网. 快速拉升！黄金股，掀"涨停潮"[EB/OL]. 2026-08-20.</li>
-    <li>山东黄金矿业股份有限公司. 关于2026年中期利润分配方案的公告[EB/OL]. 证券日报, 2026-07-22.</li>
-    <li>同花顺财经. 兴业银锡(000426)公司资料与异动提醒[EB/OL]. 2026-08-20.</li>
+    <li>美国财政部. Monthly Treasury Statement（2026财年前10个月）[EB/OL]. fiscaldata.treasury.gov, 2026-08.</li>
+    <li>国会预算办公室（CBO）. The Budget and Economic Outlook: 2026 to 2036[EB/OL]. cbo.gov/publication/61882, 2026-02.</li>
+    <li>CFTC. Commitments of Traders Report（2026年8月18日当周）[EB/OL]. cftc.gov, 2026-08-22.</li>
+    <li>今日头条·看点资讯. 金价三周涨13%，哪三个变量将打断涨势？[EB/OL]. 2026-08-22.</li>
+    <li>看点资讯. 美债利息吃掉26%税收，这个负反馈循环为何难打破？[EB/OL]. 2026-08-21.</li>
+    <li>国盛证券金融工程团队. 黄金沉浮六十年：历次行情开启与终结的启示[EB/OL]. 2026-08-19.</li>
+    <li>今日头条. 穿越周期的回响：1980、2011黄金长周期历史大顶原因分析[EB/OL]. 2026-07.</li>
+    <li>央广网财经. 金银史诗级暴跌再度上演 历史周期揭示多重投资密码[EB/OL]. 2026-01-31.</li>
+    <li>雪球专栏. 黄金的周期在哪里：三次黄金大牛市完整周期复盘[EB/OL]. 2026-04-27.</li>
+    <li>今日头条. 全球央行手里的黄金，54年来第一次比美债多[EB/OL]. 2026-08.</li>
+    <li>informedclearly. BRICS+ Dedollarization: How Multipolar Reserves Reshape Finance in 2026[EB/OL]. 2026-06-14.</li>
+    <li>infobrics. BRICS Members' Gold Reserves are not Anti-dollar; They're Anti-monopoly[EB/OL]. 2026-02-05.</li>
+    <li>NextFin. Russia's Gold Sales Strip Reserves to Lowest Since 2020[EB/OL]. 2026-08.</li>
+    <li>中辉期货. 宏观金银周报20260809[EB/OL]. 2026-08-10.</li>
+    <li>每日经济新闻. 金价"高台跳水"：机构多空激辩[EB/OL]. 2026-07-16.</li>
+    <li>东方财富网. 为什么是兴业银锡[EB/OL]. 2026-08-19.</li>
+    <li>中新经纬. 多家黄金股预喜[EB/OL]. 2026-07-14.</li>
   </ol>
 
   <div class="warn">
-    <strong>风险提示</strong>：本报告基于截至2026年8月21日的公开市场数据整理分析，仅供参考，不构成任何投资建议。贵金属价格波动剧烈，白银杠杆风险更高，历史表现不代表未来收益，投资须谨慎决策、独立判断、自担风险。
+    <strong>风险提示</strong>：本报告基于截至2026年8月23日的公开市场数据整理分析，仅供参考，不构成任何投资建议。贵金属价格波动剧烈，白银杠杆风险更高，历史表现不代表未来收益。情景概率为主观估计，可能随数据更新而修正。投资须谨慎决策、独立判断、自担风险。
   </div>
 
 </div>
